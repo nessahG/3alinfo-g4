@@ -23,8 +23,7 @@ import tn.esprit.spring.services.IEmployeService;
 
 @Scope(value = "session")
 @Controller(value = "employeController")
-@ELBeanName(value = "employeController")
-@Join(path = "/", to = "/login.jsf")
+
 public class ControllerEmployeImpl  {
 
 	@Autowired
@@ -47,33 +46,6 @@ public class ControllerEmployeImpl  {
 	private Integer employeIdToBeUpdated; // getter et setter
 	
 	private static final String LOGIN_XHTML_FACES_REDIRECT_TRUE = "/login.xhtml?faces-redirect=true";
-
-
-	public String doLogin() {
-
-		String navigateTo = "null";
-		authenticatedUser=employeService.authenticate(login, password);
-		if (authenticatedUser != null && authenticatedUser.getRole() == Role.ADMINISTRATEUR) {
-			navigateTo = "/pages/admin/welcome.xhtml?faces-redirect=true";
-			loggedIn = true;
-		}		
-
-		else
-		{
-			
-			FacesMessage facesMessage =
-					new FacesMessage("Login Failed: Please check your username/password and try again.");
-			FacesContext.getCurrentInstance().addMessage("form:btn",facesMessage);
-		}
-		return navigateTo;	
-	}
-
-	public String doLogout()
-	{
-		FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
-	
-	return LOGIN_XHTML_FACES_REDIRECT_TRUE;
-	}
 
 
 	public String addEmploye() {
