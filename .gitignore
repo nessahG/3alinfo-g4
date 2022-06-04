@@ -1,4 +1,6 @@
 HELP.md
+# Compiled class file
+*.class
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
