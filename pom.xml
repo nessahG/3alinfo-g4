@@ -209,13 +209,13 @@
 		</plugins>
 	</build>
 	<distributionManagement>
-		<snapshotRepository>
-			<id>nexus-snapshots</id>
-			<url>http://40.68.11.139:8081/repository/repo-snapshot//</url>
-		</snapshotRepository>
-		<repository>
-			<id>nexus-releases</id>
-			<url>http://40.68.11.139:8081/repository/repo-release/</url>
-		</repository>
-	</distributionManagement>
+<snapshotRepository>
+<id>maven-snapshots</id>
+<url>http://localhost:8081/nexus/content/repositories/maven-snapshots/</url>
+</snapshotRepository>
+<repository>
+<id>maven-releases</id>
+<url>http://localhost:8081/nexus/content/repositories/maven-releases/</url>
+</repository>
+</distributionManagement>
 </project>
